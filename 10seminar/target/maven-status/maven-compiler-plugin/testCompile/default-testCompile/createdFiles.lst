@@ -1,0 +1,4 @@
+kz/edu/iot/sensors/SafeSensorListenerTest.class
+kz/edu/iot/concurrency/NonBlockingSensorBoundsTest.class
+kz/edu/iot/ai/ThreadSafeInferenceCacheTest.class
+kz/edu/iot/concurrency/TelemetrySequenceGeneratorTest.class

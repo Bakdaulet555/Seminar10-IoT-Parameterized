@@ -1,0 +1,8 @@
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/ai/ThreadSafeInferenceCache.java
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/akka/ActorDemo.java
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/akka/EdgeTelemetryActor.java
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/concurrency/NonBlockingSensorBounds.java
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/concurrency/TelemetrySequenceGenerator.java
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/sensors/SafeSensorListener.java
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/streams/IoTInferenceStreamPipeline.java
+/mnt/c/Users/bakon/sabak/iot/10seminar/src/main/java/kz/edu/iot/streams/SupervisedSensorWorker.java

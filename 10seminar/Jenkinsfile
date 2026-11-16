@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(
+            name: 'RELEASE_VERSION',
+            defaultValue: '1.4.0-SNAPSHOT',
+            description: 'Version of IoT application'
+        )
+
+        choice(
+            name: 'DEPLOYMENT_TIER',
+            choices: ['EDGE', 'FOG', 'CLOUD'],
+            description: 'Deployment environment'
+        )
+
+        booleanParam(
+            name: 'ENABLE_AI_GPU',
+            defaultValue: false,
+            description: 'Enable GPU acceleration'
+        )
+    }
+
+    stages {
+        stage('Show Parameters') {
+            steps {
+                echo "Release: ${params.RELEASE_VERSION}"
+                echo "Deployment: ${params.DEPLOYMENT_TIER}"
+                echo "GPU enabled: ${params.ENABLE_AI_GPU}"
+            }
+        }
+
+        stage('Build IoT Project') {
+            steps {
+                sh '''
+                    mvn clean package \
+                      -Drevision="$RELEASE_VERSION" \
+                      -Dtarget.tier="$DEPLOYMENT_TIER" \
+                      -Denable.ai.gpu="$ENABLE_AI_GPU"
+                '''
+            }
+        }
+
+        stage('Archive JAR') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar',
+                    fingerprint: true
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'IoT BUILD SUCCESS'
+        }
+
+        failure {
+            echo 'IoT BUILD FAILED'
+        }
+    }
+}
